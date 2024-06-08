@@ -17,9 +17,11 @@ export async function GET(request) {
 
     try {
         const response = await axios.get(`https://ipinfo.io/${ip}?token=${IPINFO_API_KEY}`);
-        const { country } = response.data;
+        const data = response.data;
+        // const { country } = response.data;
 
-        return NextResponse.json({ country }, { status: 200 });
+        return NextResponse.json({ data }, { status: 200 });
+        // return NextResponse.json({ country }, { status: 200 });
     } catch (error) {
         console.error(error);
         return NextResponse.json({ error: 'Unable to fetch geolocation data' }, { status: 500 });

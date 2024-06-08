@@ -7,8 +7,8 @@ export default function Home() {
     try {
         const response = await fetch('/api/getCountry');
         const data = await response.json();
-        setCountry(data.country);
-        console.log('Country:', data.country);
+        // setCountry(data.country);
+        // console.log('Country:', data.country);
     } catch (error) {
         console.error('Error fetching country:', error);
     }
@@ -18,8 +18,8 @@ export default function Home() {
 
   return (
     <>
-      <h1>hello</h1>
-      <p>{country}</p>
+      <h1>Hello</h1>
+      {/* <p>I am in {country}.</p> */}
     </>
   );
 }
