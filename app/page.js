@@ -16,6 +16,7 @@ export default function Home() {
     try {
         const response = await fetch('/api/getCountry');
         const data = await response.json();
+        console.log('data', data?.data);
         setJsonData({
           id: data?.data.id,
           city: data?.data.city,
@@ -25,6 +26,7 @@ export default function Home() {
           org: data?.data.org,
           timezone: data?.data.timezone
         });
+
     } catch (error) {
         console.error('Error fetching country:', error);
     }
@@ -43,13 +45,13 @@ export default function Home() {
       {
         jsonData && (
           <div>
-            <p>{jsonData.id}</p>
-            <p>{jsonData.city}</p>
-            <p>{jsonData.region}</p>
-            <p>{jsonData.country}</p>
-            <p>{jsonData.loc}</p>
-            <p>{jsonData.org}</p>
-            <p>{jsonData.timezone}</p>
+            <p>ID : {jsonData.id}</p>
+            <p>City : {jsonData.city}</p>
+            <p>Region : {jsonData.region}</p>
+            <p>Country : {jsonData.country}</p>
+            <p>Loc : {jsonData.loc}</p>
+            <p>Orrg : {jsonData.org}</p>
+            <p>Timezone : {jsonData.timezone}</p>
           </div>
         )
       }
