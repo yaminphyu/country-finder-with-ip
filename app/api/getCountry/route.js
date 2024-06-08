@@ -1,7 +1,8 @@
 import { NextResponse } from 'next/server';
 import axios from 'axios';
 
-const IPINFO_API_KEY = process.env.IPINFO_API_KEY;
+// const IPINFO_API_KEY = process.env.IPINFO_API_KEY;
+const IPINFO_API_KEY = '3600309447701f';
 
 export async function GET(request) {
     if (!IPINFO_API_KEY) {
