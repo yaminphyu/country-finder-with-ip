@@ -18,7 +18,7 @@ export default function Home() {
         const data = await response.json();
         console.log('data', data?.data);
         setJsonData({
-          id: data?.data.id,
+          ip: data?.data.ip,
           city: data?.data.city,
           region: data?.data.region,
           country: data?.data.country,
@@ -45,13 +45,13 @@ export default function Home() {
       {
         jsonData && (
           <div>
-            <p>ID : {jsonData.id}</p>
-            <p>City : {jsonData.city}</p>
-            <p>Region : {jsonData.region}</p>
-            <p>Country : {jsonData.country}</p>
-            <p>Loc : {jsonData.loc}</p>
-            <p>Orrg : {jsonData.org}</p>
-            <p>Timezone : {jsonData.timezone}</p>
+            <p>IP : {jsonData.ip || '-'}</p>
+            <p>City : {jsonData.city || '-'}</p>
+            <p>Region : {jsonData.region || '-'}</p>
+            <p>Country : {jsonData.country || '-'}</p>
+            <p>Loc : {jsonData.loc || '-'}</p>
+            <p>Orrg : {jsonData.org || '-'}</p>
+            <p>Timezone : {jsonData.timezone || '-'}</p>
           </div>
         )
       }
